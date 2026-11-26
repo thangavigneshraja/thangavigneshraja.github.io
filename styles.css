@@ -27,6 +27,7 @@ body {
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 a { color: inherit; text-decoration: none; }
 ::selection { background: rgba(139, 92, 246, .45); color: #fff; }
@@ -40,7 +41,7 @@ a { color: inherit; text-decoration: none; }
 .aurora span:nth-child(3) { width: 40vw; height: 40vw; background: #65a30d; bottom: -20vw; left: 30vw; animation-delay: -14s; opacity: .16; }
 @keyframes drift { to { transform: translate(6vw, 8vh) scale(1.15); } }
 .grain { position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: .06; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-main, .footer, .topbar { position: relative; z-index: 2; }
+main, .footer { position: relative; z-index: 2; }
 
 /* ---------- Glass + spotlight ---------- */
 .glass {
@@ -65,7 +66,7 @@ main, .footer, .topbar { position: relative; z-index: 2; }
 
 /* ---------- Topbar ---------- */
 .topbar {
-  position: sticky; top: 14px; margin: 14px auto 0; width: min(1180px, calc(100% - 32px));
+  position: sticky; top: 14px; z-index: 100; margin: 14px auto 0; width: min(1180px, calc(100% - 32px));
   display: flex; align-items: center; justify-content: space-between; gap: 20px;
   padding: 10px 10px 10px 14px; border-radius: 999px;
   background: rgba(12, 14, 22, .6); border: 1px solid var(--line);
